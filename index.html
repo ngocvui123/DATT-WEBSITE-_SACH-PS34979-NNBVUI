@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<head>
+    <title>Thực tập fetch</title>
+    <link rel="stylesheet" href="css/c1.css">
+</head>
+
+<body>
+    <div class="container">
+        <a href="#top" class="icontop2">&#8657;</a>
+        <header id="header">
+            <a href="#spmoi">Sản phẩm mới</a>
+            <a href="#sphot">Sản phẩm nổi bật</a>
+            <a href="#bai_viet_moi">Bài viết</a>
+            <a href="#binh_luan">Phản hồi khách hàng</a>
+            <a href="#anh_dep">Ảnh đẹp</a>
+        </header>
+        <nav id="menu"></nav>
+        <main>
+            <section id="spmoi">
+                <h2>Sản phẩm mới <a class="icontop" href="#top">&#8679;</a> </h2>
+                <div id="data"></div>
+            </section>
+            <section id="sphot">
+                <h2>Sản phẩm nổi bật <a class="icontop" href="#top">&#8679;</a> </h2>
+                <div id="data"></div>
+            </section>
+            <section id="bai_viet_moi">
+                <h2>Bài viết <a class="icontop" href="#top">&#8679;</a> </h2>
+                <div id="data"></div>
+            </section>
+            <section id="binh_luan">
+                <h2>Ý kiến khách hàng <a class="icontop" href="#top">&#8679;</a> </h2>
+                <div id="data"></div>
+            </section>
+            <section id="anh_dep">
+                <h2>Ảnh đẹp <a class="icontop" href="#top">&#8679;</a> </h2>
+                <div id="data"></div>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer>
+            <div class="footer-links">
+                <a href="#spmoi">Sản phẩm mới</a>
+                <a href="#sphot">Sản phẩm nổi bật</a>
+                <a href="#bai_viet_moi">Bài viết</a>
+                <a href="#binh_luan">Phản hồi khách hàng</a>
+                <a href="#anh_dep">Ảnh đẹp</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>&copy; 2024 Your Website. All rights reserved.</p>
+        </footer>
+
+    </div>
+</body>
+
+</html>
+<script type="module">
+    import { lay_loai, lay_sp_moi, lay_sp_hot, lay_bai_viet_moi, lay_binh_luan } from './js/app.js';
+    import { lay_anh_dep } from './js/app.js';
+    let loai_html = await lay_loai();
+    let sp_moi_html = await lay_sp_moi(6);
+    document.querySelector("#menu").innerHTML = loai_html;
+    document.querySelector("#spmoi #data").innerHTML = sp_moi_html;
+    document.querySelector("#sphot #data").innerHTML = await lay_sp_hot(6);
+    document.querySelector("#bai_viet_moi #data").innerHTML = await lay_bai_viet_moi(6);
+    document.querySelector("#binh_luan #data").innerHTML = await lay_binh_luan(6);
+    document.querySelector("#anh_dep #data").innerHTML = await lay_anh_dep("sách", 5);
+</script>

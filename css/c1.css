@@ -1,0 +1,361 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#header {
+    background-color: #f4f4f9;
+    text-align: center;
+    padding: 20px 0;
+}
+
+#header a {
+    margin: 0 15px;
+    font-size: 1.5em;
+    color: #333;
+    transition: color 0.3s;
+}
+
+#header a:hover {
+    color: #ff6b6b;
+    text-decoration: underline;
+}
+
+#menu {
+    background-color: #ff6b6b;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+#menu li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+}
+
+#menu a {
+    font-size: 1.3em;
+    color: white;
+    transition: color 0.3s;
+}
+
+#menu a:hover {
+    color: #f9f871;
+    text-decoration: underline;
+}
+
+#spmoi,
+#sphot,
+#bai_viet_moi,
+#binh_luan,
+#anh_dep,
+#sp_trong_loai {
+    padding: 40px 0;
+}
+
+#spmoi,
+#sphot,
+#bai_viet_moi {
+    background-color: #f9fafb;
+}
+
+#spmoi h2,
+#sphot h2,
+#bai_viet_moi h2,
+#binh_luan h2,
+#anh_dep h2,
+#sp_trong_loai h2 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+#spmoi #data,
+#sphot #data,
+#bai_viet_moi #data,
+#binh_luan #data,
+#anh_dep #data,
+#sp_trong_loai #data {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#spmoi #data .sp,
+#sphot #data .sp,
+#bai_viet_moi #data .bv,
+#binh_luan #data .bl,
+#anh_dep #data .hinh,
+#sp_trong_loai #data .sp {
+    width: 30%;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+#spmoi #data .sp:hover,
+#sphot #data .sp:hover,
+#bai_viet_moi #data .bv:hover,
+#binh_luan #data .bl:hover,
+#anh_dep #data .hinh:hover,
+#sp_trong_loai #data .sp:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+#spmoi #data .sp h3,
+#sphot #data .sp h3,
+#bai_viet_moi #data .bv h3,
+#binh_luan #data .bl h5,
+#anh_dep #data .hinh img {
+    margin-bottom: 15px;
+    font-size: 1.3em;
+    color: #555;
+    height: 50px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+#spmoi #data .sp img,
+#sphot #data .sp img,
+#bai_viet_moi #data .bv img,
+#binh_luan #data .bl img,
+#anh_dep #data .hinh img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+#spmoi #data .sp:hover img,
+#sphot #data .sp:hover img,
+#bai_viet_moi #data .bv:hover img {
+    transform: scale(1.05);
+}
+
+#binh_luan {
+    background-color: #fffaf0;
+    padding-top: 40px;
+}
+
+#binh_luan #data .bl {
+    border: 1px solid darkgreen;
+    box-shadow: 1px 1px 5px rgba(255, 99, 71, 0.5);
+}
+
+#binh_luan #data .bl h5 span {
+    float: center;
+}
+
+#binh_luan #data .bl p {
+    margin: 10px;
+    text-align: justify;
+    line-height: 150%;
+    max-height: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#binh_luan .rating {
+    margin: 10px 0;
+}
+
+.rating span {
+    font-size: 1.5em;
+    color: gold;
+}
+
+#anh_dep {
+    background-color: lightcyan;
+    padding-top: 40px;
+}
+
+#anh_dep #data .hinh img {
+    height: 250px;
+    margin: auto;
+    border: 1px solid black;
+}
+
+a.icontop {
+    float: right;
+    width: 35px;
+    height: 35px;
+    line-height: 30px;
+    border-radius: 50%;
+    font-size: 1em;
+    border: 2px solid darkblue;
+    color: darkblue;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+a.icontop2 {
+    position: fixed;
+    bottom: 10px;
+    left: 5px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 50%;
+    font-size: 1.3em;
+    background-color: darkorange;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+#sp_trong_loai {
+    background-color: beige;
+    padding-top: 40px;
+}
+
+#sp_trong_loai h2 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#sp_trong_loai #data .sp {
+    width: 31%;
+    text-align: center;
+    border: 1px solid darkgreen;
+    padding: 10px;
+    margin: 10px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px salmon;
+}
+
+#sp_trong_loai #data .sp h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    height: 45px;
+}
+
+#sp_trong_loai #data .sp p {
+    margin: 10px;
+}
+
+#sp_trong_loai #data .sp img {
+    width: 90%;
+    height: 250px;
+    margin: auto;
+    border: 1px solid black;
+}
+
+/* Thêm CSS cho slider */
+.swiper-container {
+    width: 100%;
+    max-width: 800px;
+    /* Đặt giới hạn chiều rộng tối đa */
+    height: 300px;
+    /* Chiều cao của slider */
+    margin: 0 auto;
+    /* Căn giữa slider */
+    overflow: hidden;
+    /* Đảm bảo nội dung thừa không tràn ra ngoài */
+}
+
+.swiper-slide {
+    display: flex;
+    /* Đảm bảo slide có thể căn giữa nội dung */
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    width: 100%;
+    /* Ảnh chiếm toàn bộ chiều rộng của slide */
+    height: 100%;
+    /* Đặt chiều cao ảnh bằng chiều cao của slide */
+    object-fit: cover;
+    /* Giữ tỉ lệ của ảnh, cắt bớt những phần không vừa */
+    border-radius: 10px;
+    /* Bo tròn góc ảnh */
+    transition: transform 0.3s ease-in-out;
+    /* Hiệu ứng khi hover vào ảnh */
+}
+
+.swiper-slide img:hover {
+    transform: scale(1.05);
+    /* Phóng to ảnh khi hover */
+}
+
+footer {
+    background-color: #fff;
+    color: #333;
+    padding: 40px 0;
+    text-align: center;
+    position: relative;
+    border-top: 4px solid #ff6b6b;
+}
+
+footer a {
+    color: #ff6b6b;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #b92a31;
+    text-decoration: underline;
+}
+
+footer .footer-links {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+footer .footer-links a {
+    margin: 0 20px;
+}
+
+footer .social-icons {
+    margin: 20px 0;
+}
+
+footer .social-icons a {
+    margin: 0 10px;
+    font-size: 1.8em;
+    color: #ff6b6b;
+    transition: transform 0.3s, color 0.3s;
+}
+
+footer .social-icons a:hover {
+    color: #b9393f;
+    transform: scale(1.2);
+}
+
+footer p {
+    font-size: 0.9em;
+    margin-top: 15px;
+    color: #666;
+}

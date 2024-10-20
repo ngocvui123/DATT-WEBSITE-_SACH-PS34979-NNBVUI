@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style> 
+            p{ color: blue}
+            b { color: red}
+        </style>
+    </head>
+
+    <body>
+        <div id="data"></div>
+    </body>
+</html>
+<script>
+fetch("http://localhost:3000/san_pham")
+.then(  response => {
+   if (response.ok==false) throw Error( response.statusText);
+   return response.json()
+})
+.then ( data => {
+    data.forEach( sp => {
+        document.querySelector("#data").innerHTML+=`<p>${sp.ten_sp} <b>${Number(sp.gia).toLocaleString("vi")} VNĐ</b> </p>`;
+    })
+    console.log("data=", data);
+})
+</script>

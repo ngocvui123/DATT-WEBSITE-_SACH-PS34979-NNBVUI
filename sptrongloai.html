@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Thực tập fetch</title>
+    <link rel="stylesheet" href="css/c1.css">
+</head>
+<body>
+<div class="container">
+    <a href="#top" class="icontop2">&#8657;</a>
+    <nav id="menu"> </nav>
+    <main>
+        <section id="sp_trong_loai">
+            <h2>Sản phẩm  trong loại <span id="tenloai"></span> </h2>
+            <div id="data"></div> 
+        </section>
+    </main>
+</div>
+</body>
+</html>
+<script type="module">
+import { lay_loai, lay_sp_trong_loai, lay_ten_loai} from './js/app.js';
+let params = new URLSearchParams(location.search);
+let id = Number(params.get("id")) ; 
+document.querySelector("#menu").innerHTML = await lay_loai();
+document.querySelector("#sp_trong_loai #data").innerHTML = await lay_sp_trong_loai(id);
+document.querySelector("#sp_trong_loai #tenloai").innerHTML = await lay_ten_loai(id);
+</script>
