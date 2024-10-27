@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
 <head>
     <title>Thực tập fetch</title>
@@ -9,6 +10,18 @@
 
 <body>
     <div class="container">
+        <!-- Slider -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/slide/banner1.jpg" alt="Sách 1"></div>
+                <div class="swiper-slide"><img src="images/slide/banner2.jpg" alt="Sách 2"></div>
+                <div class="swiper-slide"><img src="images/slide/banner3.png" alt="Sách 3"></div>
+                <div class="swiper-slide"><img src="images/slide/banner5.png" alt="Sách 4"></div>
+
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
         <a href="#top" class="icontop2">&#8657;</a>
         <header id="header">
             <a href="#spmoi">Sản phẩm mới</a>
@@ -17,7 +30,9 @@
             <a href="#binh_luan">Phản hồi khách hàng</a>
             <a href="#anh_dep">Ảnh đẹp</a>
         </header>
+
         <nav id="menu"></nav>
+
         <main>
             <section id="spmoi">
                 <h2>Sản phẩm mới <a class="icontop" href="#top">&#8679;</a> </h2>
@@ -73,4 +88,18 @@
     document.querySelector("#bai_viet_moi #data").innerHTML = await lay_bai_viet_moi(6);
     document.querySelector("#binh_luan #data").innerHTML = await lay_binh_luan(6);
     document.querySelector("#anh_dep #data").innerHTML = await lay_anh_dep("sách", 5);
+</script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        loop: true,
+        autoplay: {
+            delay: 1000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
 </script>
